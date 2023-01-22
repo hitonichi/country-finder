@@ -59,36 +59,45 @@ function App() {
 
   if (countriesToShow.length > 10) {
     return (
-      <div>
-        <Filter newFilter={newFilter} handleFilterChange={handleFilterChange}></Filter>
-        <div>Too many matches, specify another filter.</div> 
+      <div className='wrapper'>
+        <div className='container'>
+          <Filter newFilter={newFilter} handleFilterChange={handleFilterChange}></Filter>
+          <div className='res-container'>
+            <div>Too many matches, specify another filter.</div> 
+          </div>
+        </div>
       </div>
     );
   }
   else if (countriesToShow.length === 1) {
     return (
-      <div>
-        <Filter newFilter={newFilter} handleFilterChange={handleFilterChange}></Filter>
-        <Country country={countriesToShow[0]} weather={weatherInfo}></Country>
+      <div className='wrapper'>
+        <div className='container'>
+          <Filter newFilter={newFilter} handleFilterChange={handleFilterChange}></Filter>
+          <div className='res-container'>
+            <Country country={countriesToShow[0]} weather={weatherInfo}></Country>
+          </div>
+        </div>
       </div>
       );
     }
     else {
       return (
-        <div>
-        <Filter newFilter={newFilter} handleFilterChange={handleFilterChange}></Filter>
-        {countriesToShow.map(country => (
-          <div key={country.name.official}>
-            <div>{country.name.official}</div>
-            <button id={country.name.official} onClick={(event) => handleBtnClick(event)}>Show</button>
-            <br></br>
+        <div className='wrapper'>
+          <div className='container'>
+            <Filter newFilter={newFilter} handleFilterChange={handleFilterChange}></Filter>
+          <div className='res-container'>
+            {countriesToShow.map(country => (
+              <div key={country.name.official} className='res-list-item'>
+                <div>> {country.name.official}</div>
+                <button id={country.name.official} onClick={(event) => handleBtnClick(event)}>Show</button>
+              </div>
+              ))}
           </div>
-          ))}
+          </div>
       </div>
       );
-  }
-
-  
+  }  
 }
 
 export default App;

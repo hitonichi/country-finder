@@ -3,8 +3,10 @@ const Filter = ({
     handleFilterChange
 }) => {
     return (
-        <div>
-            <div>Find Countries:</div>
+        <div className="filter-container">
+            <div className="center">
+                <h2>Find Countries:</h2>
+            </div>
             <input
                 value={newFilter}
                 onChange={handleFilterChange}

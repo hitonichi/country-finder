@@ -3,8 +3,8 @@ const Weather = ({weather}) => {
     if (weather) {
         return (
             <div>
-                <div>Temp: ${(weather.main.temp - 32) * 5 / 9}</div>
-                <div>Wind: ${weather.wind.speed} m/s</div>
+                <div>Temp: {Math.round(weather.main.temp - 273)}<sup>o</sup>C</div>
+                <div>Wind: {weather.wind.speed} m/s</div>
             </div>
         )
     }
