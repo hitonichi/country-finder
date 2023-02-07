@@ -1,6 +1,6 @@
 const Weather = ({weather}) => {
     console.log('From Weather:', weather);
-    if (weather) {
+    if (weather !== null) {
         return (
             <div>
                 <div>Temp: {Math.round(weather.main.temp - 273)}<sup>o</sup>C</div>

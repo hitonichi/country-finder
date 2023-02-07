@@ -8,8 +8,9 @@ const Filter = ({
                 <h2>Find Countries:</h2>
             </div>
             <input
+                type={'text'}
+                onChange={e => handleFilterChange(e)}
                 value={newFilter}
-                onChange={handleFilterChange}
             ></input>
         </div>
     )
